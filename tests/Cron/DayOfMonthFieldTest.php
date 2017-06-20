@@ -5,7 +5,6 @@ namespace Cron\Tests;
 use Cron\DayOfMonthField;
 use DateTime;
 use PHPUnit\Framework\TestCase;
-
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
  */
@@ -22,7 +21,6 @@ class DayOfMonthFieldTest extends TestCase
         $this->assertTrue($f->validate('5W,L'));
         $this->assertFalse($f->validate('1.'));
     }
-
     /**
      * @covers \Cron\DayOfMonthField::isSatisfiedBy
      */
@@ -31,7 +29,6 @@ class DayOfMonthFieldTest extends TestCase
         $f = new DayOfMonthField();
         $this->assertTrue($f->isSatisfiedBy(new DateTime(), '?'));
     }
-
     /**
      * @covers \Cron\DayOfMonthField::increment
      */
@@ -41,12 +38,10 @@ class DayOfMonthFieldTest extends TestCase
         $f = new DayOfMonthField();
         $f->increment($d);
         $this->assertSame('2011-03-16 00:00:00', $d->format('Y-m-d H:i:s'));
-
         $d = new DateTime('2011-03-15 11:15:00');
         $f->increment($d, true);
         $this->assertSame('2011-03-14 23:59:00', $d->format('Y-m-d H:i:s'));
     }
-
     /**
      * Day of the month cannot accept a 0 value, it must be between 1 and 31
      * See Github issue #120

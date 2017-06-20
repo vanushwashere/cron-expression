@@ -5,7 +5,6 @@ namespace Cron\Tests;
 use Cron\YearField;
 use DateTime;
 use PHPUnit\Framework\TestCase;
-
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
  */
@@ -21,7 +20,6 @@ class YearFieldTest extends TestCase
         $this->assertTrue($f->validate('*'));
         $this->assertTrue($f->validate('*/10,2012,1-12'));
     }
-
     /**
      * @covers \Cron\YearField::increment
      */

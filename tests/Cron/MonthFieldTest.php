@@ -5,7 +5,6 @@ namespace Cron\Tests;
 use Cron\MonthField;
 use DateTime;
 use PHPUnit\Framework\TestCase;
-
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
  */
@@ -22,7 +21,6 @@ class MonthFieldTest extends TestCase
         $this->assertTrue($f->validate('*/10,2,1-12'));
         $this->assertFalse($f->validate('1.fix-regexp'));
     }
-
     /**
      * @covers \Cron\MonthField::increment
      */
@@ -32,12 +30,10 @@ class MonthFieldTest extends TestCase
         $f = new MonthField();
         $f->increment($d);
         $this->assertSame('2011-04-01 00:00:00', $d->format('Y-m-d H:i:s'));
-
         $d = new DateTime('2011-03-15 11:15:00');
         $f->increment($d, true);
         $this->assertSame('2011-02-28 23:59:00', $d->format('Y-m-d H:i:s'));
     }
-
     /**
      * @covers \Cron\MonthField::increment
      */
@@ -49,14 +45,11 @@ class MonthFieldTest extends TestCase
         $f = new MonthField();
         $f->increment($d);
         $this->assertSame('2011-04-01 00:00:00', $d->format('Y-m-d H:i:s'));
-
         $d = new DateTime('2011-03-15 11:15:00');
         $f->increment($d, true);
         $this->assertSame('2011-02-28 23:59:00', $d->format('Y-m-d H:i:s'));
         date_default_timezone_set($tz);
     }
-
-
     /**
      * @covers \Cron\MonthField::increment
      */
@@ -67,7 +60,6 @@ class MonthFieldTest extends TestCase
         $f->increment($d);
         $this->assertSame('2012-01-01 00:00:00', $d->format('Y-m-d H:i:s'));
     }
-
     /**
      * @covers \Cron\MonthField::increment
      */

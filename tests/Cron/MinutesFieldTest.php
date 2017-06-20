@@ -5,7 +5,6 @@ namespace Cron\Tests;
 use Cron\MinutesField;
 use DateTime;
 use PHPUnit\Framework\TestCase;
-
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
  */
@@ -21,7 +20,6 @@ class MinutesFieldTest extends TestCase
         $this->assertTrue($f->validate('*'));
         $this->assertTrue($f->validate('*/3,1,1-12'));
     }
-
     /**
      * @covers \Cron\MinutesField::increment
      */

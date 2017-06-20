@@ -4,7 +4,6 @@ namespace Cron\Tests;
 
 use Cron\DayOfWeekField;
 use PHPUnit\Framework\TestCase;
-
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
  */
@@ -19,7 +18,6 @@ class AbstractFieldTest extends TestCase
         $this->assertTrue($f->isRange('1-2'));
         $this->assertFalse($f->isRange('2'));
     }
-
     /**
      * @covers \Cron\AbstractField::isIncrementsOfRanges
      */
@@ -31,7 +29,6 @@ class AbstractFieldTest extends TestCase
         $this->assertTrue($f->isIncrementsOfRanges('*/2'));
         $this->assertTrue($f->isIncrementsOfRanges('3-12/2'));
     }
-
     /**
      * @covers \Cron\AbstractField::isInRange
      */
@@ -44,7 +41,6 @@ class AbstractFieldTest extends TestCase
         $this->assertFalse($f->isInRange('3', '4-12'));
         $this->assertFalse($f->isInRange('13', '4-12'));
     }
-
     /**
      * @covers \Cron\AbstractField::isInIncrementsOfRanges
      */
@@ -63,12 +59,10 @@ class AbstractFieldTest extends TestCase
         $this->assertFalse($f->isInIncrementsOfRanges('3', '*'));
         $this->assertFalse($f->isInIncrementsOfRanges('0', '*/0'));
         $this->assertFalse($f->isInIncrementsOfRanges('1', '*/0'));
-
         $this->assertTrue($f->isInIncrementsOfRanges('4', '4/10'));
         $this->assertTrue($f->isInIncrementsOfRanges('14', '4/10'));
         $this->assertTrue($f->isInIncrementsOfRanges('34', '4/10'));
     }
-
     /**
      * @covers \Cron\AbstractField::isSatisfied
      */

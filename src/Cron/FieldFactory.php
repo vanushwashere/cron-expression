@@ -3,7 +3,6 @@
 namespace Cron;
 
 use InvalidArgumentException;
-
 /**
  * CRON field factory implementing a flyweight factory
  * @link http://en.wikipedia.org/wiki/Cron
@@ -14,7 +13,6 @@ class FieldFactory
      * @var array Cache of instantiated fields
      */
     private $fields = array();
-
     /**
      * Get an instance of a field object for a cron expression position
      *
@@ -46,12 +44,9 @@ class FieldFactory
                     $this->fields[$position] = new YearField();
                     break;
                 default:
-                    throw new InvalidArgumentException(
-                        $position . ' is not a valid position'
-                    );
+                    throw new InvalidArgumentException($position . ' is not a valid position');
             }
         }
-
         return $this->fields[$position];
     }
 }

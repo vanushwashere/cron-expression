@@ -3,8 +3,6 @@
 namespace Cron;
 
 use DateTime;
-
-
 /**
  * Year field.  Allows: * , / -
  */
@@ -14,7 +12,6 @@ class YearField extends AbstractField
     {
         return $this->isSatisfied($date->format('Y'), $value);
     }
-
     public function increment(DateTime $date, $invert = false)
     {
         if ($invert) {
@@ -26,12 +23,10 @@ class YearField extends AbstractField
             $date->setDate($date->format('Y'), 1, 1);
             $date->setTime(0, 0, 0);
         }
-
         return $this;
     }
-
     public function validate($value)
     {
-        return (bool) preg_match('/^[\*,\/\-0-9]+$/', $value);
+        return (bool) preg_match('/^[\\*,\\/\\-0-9]+$/', $value);
     }
 }
