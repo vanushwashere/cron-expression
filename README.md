@@ -1,6 +1,9 @@
 PHP Cron Expression Parser
 ==========================
 
+### THIS IS JUST REFACTORED [mtdowling/cron-expression](https://github.com/mtdowling/cron-expression "mtdowling/cron-expression") PACKAGE TO WORK WITH PHP 5.6+
+
+
 [![Latest Stable Version](https://poser.pugx.org/mtdowling/cron-expression/v/stable.png)](https://packagist.org/packages/mtdowling/cron-expression) [![Total Downloads](https://poser.pugx.org/mtdowling/cron-expression/downloads.png)](https://packagist.org/packages/mtdowling/cron-expression) [![Build Status](https://secure.travis-ci.org/mtdowling/cron-expression.png)](http://travis-ci.org/mtdowling/cron-expression)
 
 The PHP cron expression parser can parse a CRON expression, determine if it is
@@ -66,6 +69,6 @@ A CRON expression is a string representing the schedule for a particular command
 Requirements
 ============
 
-- PHP 7.0+
+- PHP 5.6+
 - PHPUnit is required to run the unit tests
 - Composer is required to run the unit tests
